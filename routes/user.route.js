@@ -1,6 +1,7 @@
 let express = require('express');
 
 const controller = require('../controllers/user.controller')
+const validate = require('../validate/user.validate')
 
 let router = express.Router();
 
@@ -14,7 +15,7 @@ router.get('/create', controller.create);
 router.get('/:id', controller.getId);
 
 //router.post
-router.post('/create', controller.postCreate);
+router.post('/create',validate.postCreate , controller.postCreate);
 
 
 
