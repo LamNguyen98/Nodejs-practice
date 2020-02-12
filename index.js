@@ -14,6 +14,8 @@ app.set('views', './views');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static('public'));
+
 // app.get
 app.get('/', (req, res) => {
     res.render('index', {
